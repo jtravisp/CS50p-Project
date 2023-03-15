@@ -1,5 +1,8 @@
 import pandas as pd
 import sys
+import requests
+import os
+
 # from tmdbapi import gettopten, gettoptengenre
 # import matplotlib.pyplot as plt
 

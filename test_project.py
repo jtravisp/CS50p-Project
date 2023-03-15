@@ -1,4 +1,4 @@
-from tmdbapi import getmovie, getid
+from project import getmovie, getid
 
 
 def test_id():
