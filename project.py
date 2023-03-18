@@ -2,7 +2,7 @@ import pandas as pd
 import sys
 import requests
 import os
-from tmdbapi import gettopten, gettoptengenre
+from tmdbapi import get_top_ten, get_top_ten_genre
 
 # from tmdbapi import gettopten, gettoptengenre
 # import matplotlib.pyplot as plt
@@ -47,7 +47,7 @@ def menu():
 
     if _ == "1":
         year = int(input("Year: "))
-        df = gettopten(year)
+        df = get_top_ten(year)
         print(df)
 
     elif _ == "2":
@@ -64,7 +64,7 @@ def menu():
         # User list was 1-indexed, su subtract 1 to find id in 0-indexed list
         genre_id = genres[choice-1]
         # call the function with the selected genre ID
-        df = gettoptengenre(year, genre_id)
+        df = get_top_ten_genre(year, genre_id)
         print(df)
 
     elif _=="3":

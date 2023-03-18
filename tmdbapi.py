@@ -7,7 +7,7 @@ apikey = os.getenv('MOVIEDB_API_KEY')
 
 # Implement:
     # Get number of times an actor appears in a year
-   # Get top 10 rated by year
+    # Get top 10 rated by year
     # Plot top 10 in a year 
 
 def main(): # for testing purposes
@@ -35,7 +35,7 @@ def getmovie(movie_id):
     else:
         print("Failed to retrieve data")
 
-def gettopten(year):
+def get_top_ten(year):
     response = requests.get(f"https://api.themoviedb.org/3/discover/movie?api_key={apikey}&language=en-US&sort_by=revenue.desc&include_adult=false&include_video=false&page=1&primary_release_year={year}&vote_count.gte=500&vote_average.gte=7&with_watch_monetization_types=flatrate")
     if response.status_code == 200:
         topmovies = response.json()['results']
@@ -53,7 +53,7 @@ def gettopten(year):
     else:
         print("Failed to retrieve data")
 
-def gettoptengenre(year, genre_id):
+def get_top_ten_genre(year, genre_id):
     response = requests.get(f"https://api.themoviedb.org/3/discover/movie?api_key={apikey}&language=en-US&sort_by=revenue.desc&include_adult=false&include_video=false&page=1&primary_release_year={year}&with_genres={genre_id}&with_watch_monetization_types=flatrate")
     if response.status_code == 200:
         topmovies = response.json()['results']
